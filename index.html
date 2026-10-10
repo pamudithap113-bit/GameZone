@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - Ultimate Game Downloads</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Game<span>Zone</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Categories <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#games-section" onclick="filterGames('all')">All Games</a>
+                        <a href="#games-section" onclick="filterGames('cyber')">Cyber Warriors Hub</a>
+                        <a href="#games-section" onclick="filterGames('racing')">Racing Games</a>
+                        <a href="#games-section" onclick="filterGames('strategy')">Strategy & Indie Hub</a>
+                    </div>
+                </li>
+                <li><a href="#guide">How to Download</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Ultimate Gaming Hub!</h1>
+            <p>Explore different game series, enter sub-categories, select your favorite version, and download safely.</p>
+            <a href="#games-section" class="btn">Explore Categories</a>
+        </div>
+    </section>
+
+    <!-- Guide Section with Animations -->
+    <section id="guide" class="guide-section">
+        <h2>How to Download Games</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <i class="fas fa-folder-open"></i>
+                <h3>1. Enter a Category</h3>
+                <p>Click on a game series like Strategy Hub to view available versions.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-mouse-pointer"></i>
+                <h3>2. Select Specific Game</h3>
+                <p>Choose the exact version or edition you want to download.</p>
+            </div>
+            <div class="step-card">
+                <i class="fas fa-download"></i>
+                <h3>3. Download & Play</h3>
+                <p>Click download on the selected game item and enjoy!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Hub / Selection Section -->
+    <section id="games-section" class="games-section">
+        <h2 id="section-title">Game Collections</h2>
+        
+        <!-- Category Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGames('all')">All Games</button>
+            <button class="filter-btn" onclick="filterGames('cyber')">Cyber Warriors Series</button>
+            <button class="filter-btn" onclick="filterGames('racing')">Racing Hub</button>
+            <button class="filter-btn" onclick="filterGames('strategy')">Strategy & Indie</button>
+        </div>
+
+        <div class="game-grid" id="gameGrid">
+            
+            <!-- Cyber Warriors Series Card -->
+            <div class="game-card" data-category="cyber" onclick="openSubCategory('cyber')">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=500&q=80" alt="Cyber Warriors">
+                <div class="card-info">
+                    <h3>Cyber Warriors Series</h3>
+                    <p class="category">Action / Open World Hub</p>
+                    <span class="view-details-btn">View Editions <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Racing Hub Card -->
+            <div class="game-card" data-category="racing" onclick="openSubCategory('racing')">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=500&q=80" alt="Racing Hub">
+                <div class="card-info">
+                    <h3>Speed Horizon Series</h3>
+                    <p class="category">Racing Hub</p>
+                    <span class="view-details-btn">View Editions <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Strategy & Indie Hub Card (Papers, Please) -->
+            <div class="game-card" data-category="strategy" onclick="openSubCategory('strategy')">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80" alt="Strategy Hub">
+                <div class="card-info">
+                    <h3>Strategy & Indie Hub</h3>
+                    <p class="category">Simulation / Puzzle</p>
+                    <span class="view-details-btn">View Editions <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sub-Games Modal -->
+    <div id="subCategoryModal" class="sub-modal">
+        <div class="sub-modal-content">
+            <span class="close-btn" onclick="closeSubModal()">&times;</span>
+            <h2 id="modalHubTitle">Select Game Edition</h2>
+            <p class="modal-sub-desc">Choose your desired version to proceed with download:</p>
+            
+            <div id="subGameList" class="sub-game-list">
+                <!-- Dynamic sub-games will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GameZone. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

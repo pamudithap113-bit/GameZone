@@ -1,6 +1,6 @@
 // Database of sub-games (Direct Google Drive links integrated)
 const subGamesData = {
-    cyber: [
+    story: [
         { name: "Cyber Warriors: Origins (v1.0)", size: "45 GB", tag: "Base Game", link: "#" },
         { name: "Cyber Warriors: Phantom Liberty Edition", size: "62 GB", tag: "DLC Included", link: "#" }
     ],
